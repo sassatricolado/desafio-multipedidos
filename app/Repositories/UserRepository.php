@@ -18,6 +18,7 @@ class UserRepository
 
     public function remove(User $user)
     {
+        $user->cars()->detach();
         $user->delete();
     }
 

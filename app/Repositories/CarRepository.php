@@ -35,6 +35,7 @@ class CarRepository
 
     public function remove(Car $car)
     {
+        $car->users()->detach();
         $car->delete();
     }
 }

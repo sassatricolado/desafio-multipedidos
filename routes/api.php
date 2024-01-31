@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CarController;
+use App\Http\Controllers\UserCarController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -26,4 +27,10 @@ Route::controller(CarController::class)->group(function () {
     Route::post('/cars/store', 'store');
     Route::put('/cars/update/{id}', 'edit');
     Route::delete('/cars/delete/{id}', 'delete');
+});
+
+Route::controller(UserCarController::class)->group(function () {
+    Route::get('/userCars/{userId}', 'userCars');
+    Route::post('/associate/{userId}/{carId}', 'associate');
+    Route::delete('/disassociate/{userId}/{carId}', 'disassociate');
 });
