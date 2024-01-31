@@ -18,13 +18,13 @@ class UserRepository
 
     public function remove(User $user)
     {
+        $user->cars()->detach();
         $user->delete();
     }
 
     public function findUser($id)
     {
-        $user = User::find($id);
-        return $user;
+        return User::find($id);
     }
 
     public function update(User $user, array $data)
