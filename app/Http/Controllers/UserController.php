@@ -26,13 +26,6 @@ class UserController extends Controller
         return response()->json("User successfully created!");
     }
 
-    public function delete(string $id)
-    {
-        $this->service->softDelete($id);
-
-        return response()->json("User with id $id successfully deleted! (soft-deleted).");
-    }
-
     public function edit(string $id, Request $request)
     {
         $this->service->checkUserExistance($id);
@@ -43,5 +36,12 @@ class UserController extends Controller
         $this->service->updateUser($id, $validated);
 
         return response()->json("User with id $id successfully updated!");
+    }
+
+    public function delete(string $id)
+    {
+        $this->service->softDelete($id);
+
+        return response()->json("User with id $id and all of his relationships successfully deleted! (soft-deleted).");
     }
 }

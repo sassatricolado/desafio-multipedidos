@@ -23,8 +23,7 @@ class UserRepository
 
     public function findUser($id)
     {
-        $user = User::find($id);
-        return $user;
+        return User::find($id);
     }
 
     public function update(User $user, array $data)
