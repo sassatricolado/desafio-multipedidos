@@ -79,8 +79,8 @@ Suba a aplicação
 | Parâmetro   | Tipo       | Descrição                                   |
 | :---------- | :--------- | :------------------------------------------ |
 | `model` | `string` | **Obrigatório**. Modelo do carro |
-| `make` | `string` | **Obrigatório. Marca do carro |
-| `year` | `integer` | **Obrigatório. Ano do carro |
+| `make` | `string` | **Obrigatório**. Marca do carro |
+| `year` | `integer` | **Obrigatório**. Ano do carro |
 
 #### Atualiza carro (Mesmos parâmetros obrigatórios da criação de carro)
 
